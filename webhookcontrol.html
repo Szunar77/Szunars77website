@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook control panel</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <style>
+	div.a {
+	text-align: center;
+	}
+	div.b {
+	text-align: left;
+	}
+</style>
+  <body>
+    <hr size="75" width="950" color="#fa8072 ">  
+	<div style = "position:relative; left:-330px; top:-85px; size:5px;">
+	<div class="a">
+	<style>
+	h2 {
+        text-shadow: 2px 2px beige;
+    }
+	</style>
+         <h2>Kyosti's website</h2>
+    </div>
+	</div>
+	<div style = "position:relative; left:0px; top:-100px; size:5px;">
+	<div class="a">
+	<hr size="4" width="950" color="#ffffff">  
+	</div>
+	</div>
+	<link rel="stylesheet" href="styles.css">
+	<pages>
+	<nav>
+		<ul>
+			<li><a href="index.html">Main website</a></li>
+			<li><a href="webhookcontrol.html">Webhook Control Panel</a></li>
+			<li><a href="bruhmoment.html">Bruh momento</a></li>
+		</ul>
+	</nav>
+	</pages>
+	<div style = "position:relative; left:-325px; top:-75px;">
+    <div class="a">
+	<label for="webhookurl">Webhook URL:</label>
+	<input type="text" id="webhookurl" name="webhookurl" value=""><br><br>
+	</div>
+	</div>
+	<div style = "position:relative; left:-240px; top:-75px;">
+    <div class="a"
+	<label for="input1">Type what word should the webhook type:</label>
+	<input type="text" id="input1" name="input1"><br><br>
+	</div>
+	</div>
+  </body>
+  <body>
+  <div style = "position:relative; left:-442px; top:-75px;">
+  <div class="a">
+    <button onclick="sendMessage()">Send</button><br><br>
+  </div>
+  </div>
+  <div style = "position:relative; left:0px; top:-80px;">
+  <div class="a">
+  <hr size="5" width="950" color="black">
+  </div>
+  </div>
+  <div style = "position:relative; left:-323px; top:-75px;">  
+  <div class="a">
+  <label for="emtitle">Title of embed:</label>
+  <input type="text" id="emtitle" name="emtitle"><br><br>
+  </div>
+  </div>
+	<div style = "position:relative; left:-300px; top:-75px;">  
+	<div class="a">
+	<label for="emdesc">Description of embed:</label>
+	<input type="text" id="emdesc" name="emdesc"><br><br>
+	<label for="emcolor">Color of embed (dec):</label>
+	<input type="number" id="emcolr" name="emcolr"><br><br>
+	</div>
+	</div>
+	<div style = "position:relative; left:-417px; top:-75px;">  
+	<div class="a">
+	<button onclick="sendMessage4()">Send embed</button><br><br>
+	</div>
+	</div>
+	<div style = "position:relative; left:0px; top:-80px;">
+	<div class="a">
+	<hr size="5" width="950" color="black">
+	</div>
+	</div>
+  </body>
+  <body>
+   <div style = "position:relative; left:0px; top:-75px;">  
+   <div class="a">
+	Send presets:<br><br>
+	<b>Before you use presets, you need to type the Webhook url into the Webhook URL box</b><br><br>
+	</div>
+	<div class="a">
+	<div style = "position:relative; left:0px; top:0px;">  
+	<button onclick="sendMessage1()">Zbrodnie wojenne</button><br><br>
+	<button onclick="sendMessage2()">Kości</button><br><br>
+	<button onclick="sendMessage3()">Windows tech support</button><br><br>
+	</div>
+	</div>
+  </body>
+  <script>
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", webhookurl.value);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        content: input1.value
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+  <script>
+    function sendMessage1() {
+      var request = new XMLHttpRequest();
+      request.open("POST", webhookurl.value);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        content: "Popełnie zbrodnie wojenne"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+  <script>
+    function sendMessage2() {
+      var request = new XMLHttpRequest();
+      request.open("POST", webhookurl.value);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        content: "Mielone kości to pyszności"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+  <script>
+    function sendMessage3() {
+      var request = new XMLHttpRequest();
+      request.open("POST", webhookurl.value);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        content: "Helo, my name is John and this is Windows tech support"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+  <script>
+    function sendMessage4() {
+      var request = new XMLHttpRequest();
+      request.open("POST", webhookurl.value);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+		"embeds": [
+				{
+	  "title": emtitle.value,
+	  "description": emdesc.value,
+	  "color": emcolr.value
+    }
+  ]
+}
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>

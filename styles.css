@@ -1,0 +1,49 @@
+nav {
+	text-align: center;
+	position:relative;
+	left: -270px;
+	top: -101.5px;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+nav li {
+	display: inline-block;
+	margin-left: 25px;
+}
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -75px;
+  
+}
+a {
+    color: black;
+    border: 3px outset beige;
+    background: beige;
+    padding: 1px;
+    text-decoration: none;
+}
+a:hover {
+    background: #e1e1c8;
+}
+a:active {
+    border-style: inset;
+}
+
+#clock {
+  color: #000000;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
